@@ -318,9 +318,19 @@ export default function AITraining() {
       {/* PROGRAM OVERVIEW */}
       <Section id="program" eyebrow="Обзор" title="Теория — 30 минут. Остальное — руки на клавиатуре.">
         <div className="grid gap-12 md:grid-cols-2">
-          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-            Программа сочетает теоретическую базу с интенсивной практикой на реалистичных корпоративных сценариях. Каждое занятие длится 1.5 часа: 30 минут теории и час практики. После занятия — домашнее задание, которое превращает учебный пример в рабочий навык.
-          </p>
+          <div>
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Программа сочетает теоретическую базу с интенсивной практикой на реалистичных корпоративных сценариях. Каждое занятие длится 1.5 часа: 30 минут теории и час практики. После занятия — домашнее задание, которое превращает учебный пример в рабочий навык.
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex -space-x-3">
+                <img src={avatarSarah} alt="Sarah" className="h-10 w-10 rounded-full border-2 border-background object-cover" />
+                <img src={avatarMarcus} alt="Marcus" className="h-10 w-10 rounded-full border-2 border-background object-cover" />
+                <img src={avatarPriya} alt="Priya" className="h-10 w-10 rounded-full border-2 border-background object-cover" />
+              </div>
+              <span className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Команда преподавателей</span>
+            </div>
+          </div>
           <ul className="space-y-4 text-base">
             {[
               "Общий базовый модуль для всех участников",
@@ -347,7 +357,7 @@ export default function AITraining() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="bg-background p-10"
+              className="group bg-background p-10 transition-colors duration-300 hover:bg-primary/5"
             >
               <div className="flex items-baseline justify-between">
                 <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t.tag}</span>
@@ -364,7 +374,7 @@ export default function AITraining() {
       <Section id="lessons" eyebrow="Программа" title="8 занятий — каждое заканчивается работающим агентом.">
         <div className="grid gap-px overflow-hidden border border-foreground/10 bg-foreground/10 md:grid-cols-2">
           {lessons.map((l) => (
-            <div key={l.n} className="bg-background p-10">
+            <div key={l.n} className="group bg-background p-10 transition-colors duration-300 hover:bg-primary/5">
               <div className="flex items-baseline justify-between text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 <span>Занятие {l.n}</span>
                 <span>{l.track}</span>
