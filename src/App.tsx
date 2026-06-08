@@ -9,7 +9,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
 
-import Landing from "./pages/Landing";
+import AITraining from "./pages/AITraining";
 import Auth from "./pages/Auth";
 import Register from "./pages/Register";
 import CompanyPage from "./pages/CompanyPage";
@@ -43,7 +43,7 @@ const App = () => (
             <ScrollToTop />
             <Routes>
               {/* Public */}
-              <Route path="/" element={<Landing />} />
+              <Route path="/" element={<AITraining />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/register/:slug" element={<Register />} />
               <Route path="/company/:companySlug" element={<CompanyPage />} />
