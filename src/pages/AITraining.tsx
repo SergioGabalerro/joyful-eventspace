@@ -2,6 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Download, Menu, X } from "lucide-react";
 
+import eventChill from "@/assets/event-chill-code-workshop.jpg";
+import eventHackathon from "@/assets/event-hackathon-ai.jpg";
+import eventJam from "@/assets/event-late-night-jam.jpg";
+import eventStartup from "@/assets/event-startup-weekend.jpg";
+import avatarSarah from "@/assets/avatar-sarah.jpg";
+import avatarMarcus from "@/assets/avatar-marcus.jpg";
+import avatarPriya from "@/assets/avatar-priya.jpg";
+
 const stats = [
   { value: "8", label: "занятий" },
   { value: "1.5ч", label: "каждое" },
