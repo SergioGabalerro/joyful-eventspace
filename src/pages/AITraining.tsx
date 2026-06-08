@@ -2,6 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, Download, Menu, X } from "lucide-react";
 
+import eventChill from "@/assets/event-chill-code-workshop.jpg";
+import eventHackathon from "@/assets/event-hackathon-ai.jpg";
+import eventJam from "@/assets/event-late-night-jam.jpg";
+import eventStartup from "@/assets/event-startup-weekend.jpg";
+import avatarSarah from "@/assets/avatar-sarah.jpg";
+import avatarMarcus from "@/assets/avatar-marcus.jpg";
+import avatarPriya from "@/assets/avatar-priya.jpg";
+
 const stats = [
   { value: "8", label: "занятий" },
   { value: "1.5ч", label: "каждое" },
@@ -215,8 +223,65 @@ export default function AITraining() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="px-6 pb-24 pt-20 md:pt-32">
-        <div className="mx-auto max-w-6xl">
+      <section id="top" className="relative overflow-hidden px-6 pb-24 pt-20 md:pt-32">
+        <div className="relative mx-auto max-w-6xl">
+          {/* Floating cards — like original template */}
+          <motion.div
+            className="hidden lg:block absolute left-[-60px] top-[40px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: -60, y: -40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[6deg]">
+              <img src={eventChill} alt="Code workshop" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Workshop</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden lg:block absolute left-[-80px] bottom-[80px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: -60, y: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.35 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[-5deg]">
+              <img src={eventJam} alt="Late night session" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Lab</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden lg:block absolute right-[-60px] top-[60px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: 60, y: -40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.25 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[-6deg]">
+              <img src={eventStartup} alt="Startup sprint" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Sprint</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden lg:block absolute right-[-80px] bottom-[60px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: 60, y: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.4 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[5deg]">
+              <img src={eventHackathon} alt="AI hackathon" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Hackathon</span>
+              </div>
+            </div>
+          </motion.div>
+
           <p className="mb-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">Корпоративная программа · 2026</p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -253,9 +318,19 @@ export default function AITraining() {
       {/* PROGRAM OVERVIEW */}
       <Section id="program" eyebrow="Обзор" title="Теория — 30 минут. Остальное — руки на клавиатуре.">
         <div className="grid gap-12 md:grid-cols-2">
-          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-            Программа сочетает теоретическую базу с интенсивной практикой на реалистичных корпоративных сценариях. Каждое занятие длится 1.5 часа: 30 минут теории и час практики. После занятия — домашнее задание, которое превращает учебный пример в рабочий навык.
-          </p>
+          <div>
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Программа сочетает теоретическую базу с интенсивной практикой на реалистичных корпоративных сценариях. Каждое занятие длится 1.5 часа: 30 минут теории и час практики. После занятия — домашнее задание, которое превращает учебный пример в рабочий навык.
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex -space-x-3">
+                <img src={avatarSarah} alt="Sarah" className="h-10 w-10 rounded-full border-2 border-background object-cover" />
+                <img src={avatarMarcus} alt="Marcus" className="h-10 w-10 rounded-full border-2 border-background object-cover" />
+                <img src={avatarPriya} alt="Priya" className="h-10 w-10 rounded-full border-2 border-background object-cover" />
+              </div>
+              <span className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Команда преподавателей</span>
+            </div>
+          </div>
           <ul className="space-y-4 text-base">
             {[
               "Общий базовый модуль для всех участников",
@@ -282,7 +357,7 @@ export default function AITraining() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="bg-background p-10"
+              className="group bg-background p-10 transition-colors duration-300 hover:bg-primary/5"
             >
               <div className="flex items-baseline justify-between">
                 <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t.tag}</span>
@@ -299,7 +374,7 @@ export default function AITraining() {
       <Section id="lessons" eyebrow="Программа" title="8 занятий — каждое заканчивается работающим агентом.">
         <div className="grid gap-px overflow-hidden border border-foreground/10 bg-foreground/10 md:grid-cols-2">
           {lessons.map((l) => (
-            <div key={l.n} className="bg-background p-10">
+            <div key={l.n} className="group bg-background p-10 transition-colors duration-300 hover:bg-primary/5">
               <div className="flex items-baseline justify-between text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 <span>Занятие {l.n}</span>
                 <span>{l.track}</span>
