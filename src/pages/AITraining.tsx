@@ -223,8 +223,65 @@ export default function AITraining() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="px-6 pb-24 pt-20 md:pt-32">
-        <div className="mx-auto max-w-6xl">
+      <section id="top" className="relative overflow-hidden px-6 pb-24 pt-20 md:pt-32">
+        <div className="relative mx-auto max-w-6xl">
+          {/* Floating cards — like original template */}
+          <motion.div
+            className="hidden lg:block absolute left-[-60px] top-[40px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: -60, y: -40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[6deg]">
+              <img src={eventChill} alt="Code workshop" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Workshop</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden lg:block absolute left-[-80px] bottom-[80px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: -60, y: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.35 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[-5deg]">
+              <img src={eventJam} alt="Late night session" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Lab</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden lg:block absolute right-[-60px] top-[60px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: 60, y: -40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.25 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[-6deg]">
+              <img src={eventStartup} alt="Startup sprint" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Sprint</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="hidden lg:block absolute right-[-80px] bottom-[60px] w-[220px]"
+            initial={{ opacity: 0, scale: 0.3, x: 60, y: 40 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.4 }}
+          >
+            <div className="rounded-2xl overflow-hidden shadow-lg rotate-[5deg]">
+              <img src={eventHackathon} alt="AI hackathon" className="w-full h-[140px] object-cover" />
+              <div className="bg-card px-3 py-2">
+                <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Hackathon</span>
+              </div>
+            </div>
+          </motion.div>
+
           <p className="mb-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">Корпоративная программа · 2026</p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
